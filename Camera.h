@@ -85,7 +85,7 @@ public:
 			if (((this->Position + (this->Front * velocity)).x > 0.0f) &&
 				((this->Position + (this->Front * velocity)).x < 9.5f) &&
 				((this->Position + (this->Front * velocity)).z > 0.0f) &&
-				((this->Position + (this->Front * velocity)).z < 9.5f)) {
+				((this->Position - (this->Front * velocity)).z < 9.5f)) {
 				this->Position += this->Front * velocity;
 			}
 			this->Position.y = 0.0f;
