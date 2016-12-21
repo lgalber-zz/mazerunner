@@ -51,11 +51,17 @@ int main() {
 	// Set all the required options for GLFW
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	// We want to use the openGL core profile, instead of immediate mode (old one)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
 	// Create a GLFWwindow object that we can use for GLFW's functions
 	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "MazeRunner", nullptr, nullptr);
+	if (window == nullptr) {
+		std::cout << "Failed to create GLFW window" << std::endl;
+		glfwTerminate();
+		return -1;
+	}
 	glfwMakeContextCurrent(window);
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -68,7 +74,10 @@ int main() {
 	glewExperimental = GL_TRUE;
 	glEnable(GL_DEPTH_TEST);
 	// Initialize GLEW to setup the OpenGL Function pointers
-	glewInit();
+	if (glewInit() != GLEW_OK) {
+		std::cout << "Failed to initialize GLEW" << std::endl;
+		return -1;
+	}
 
 	// Define the viewport dimensions
 	glViewport(0, 0, WIDTH, HEIGHT);
@@ -214,12 +223,15 @@ int main() {
 
 	GLuint VBO, VAO;
 	glGenVertexArrays(1, &VAO);
+	// Generate a Buffer
 	glGenBuffers(1, &VBO);
 
 	// Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).
 	glBindVertexArray(VAO);
 
+	// Bind the generated buffer con el GL_ARRAY_BUFFER
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	// Copy the previously defined vertex data into the buffer's memory
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	// Position attribute
