@@ -217,7 +217,7 @@ int main() {
 		150.0f, 20.0f, 150.0f,	0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
 		150.0f, 20.0f, 150.0f,	0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
 		-150.0f, 20.0f, 150.0f,	0.0f, -1.0f, 0.0f,	0.0f, 0.0f,
-		-150.0f, 20.0f, -150.0f,	0.0f, -1.0f, 0.0f,	0.0f, 1.0f*/
+		-150.0f, 20.0f, -150.0f, 0.0f, -1.0f, 0.0f,	0.0f, 1.0f*/
 		
 	};
 
@@ -247,7 +247,7 @@ int main() {
 	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
 
 	// Then, we set the light's VAO (VBO stays the same. After all, the vertices are the same for the light object (also a 3D cube))
-	GLuint lightVAO;
+	/*GLuint lightVAO;
 	glGenVertexArrays(1, &lightVAO);
 	glBindVertexArray(lightVAO);
 	// We only need to bind to the VBO (to link it with glVertexAttribPointer), no need to fill it; the VBO's data already contains all we need.
@@ -255,7 +255,7 @@ int main() {
 	// Set the vertex attributes (only position data for the lamp))
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0); // Note that we skip over the other data in our buffer object (we don't need the normals/textures, only positions).
 	glEnableVertexAttribArray(0);
-	glBindVertexArray(0);
+	glBindVertexArray(0);*/
 
 
 	// Load and create a texture 
@@ -429,7 +429,7 @@ int main() {
 		// Drawing the lamp
 		// ====================
 		// Also draw the lamp object, again binding the appropriate shader
-		lampShader.Use();
+		/*lampShader.Use();
 		// Get location objects for the matrices on the lamp shader (these could be different on a different shader)
 		modelLoc = glGetUniformLocation(lampShader.Program, "model");
 		viewLoc = glGetUniformLocation(lampShader.Program, "view");
@@ -450,7 +450,7 @@ int main() {
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(lightVAO);
 		glDrawArrays(GL_TRIANGLES, 66, 36);
-		glBindVertexArray(0);
+		glBindVertexArray(0);*/
 
 
 
