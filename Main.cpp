@@ -167,7 +167,7 @@ int main() {
 		10.0f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
 		10.0f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
+		-0.5f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	0.0f, 1.0f/*,
 
 		// Lamp
 		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
@@ -210,7 +210,7 @@ int main() {
 		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
 		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
 		-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f
+		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f*/
 		// Sky
 		/*-150.0f, 20.0f, -150.0f,	0.0f, -1.0f, 0.0f,	0.0f, 1.0f,
 		150.0f, 20.0f, -150.0f,	0.0f, -1.0f, 0.0f,	1.0f, 1.0f,
@@ -221,10 +221,18 @@ int main() {
 		
 	};
 
-	GLuint VBO, VAO;
+	GLuint indices[] = {  // Note that we start from 0!
+		61, 62, 65,   // First Triangle
+		62, 64, 65    // Second Triangle
+	};
+
+	GLuint VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
 	// Generate a Buffer
 	glGenBuffers(1, &VBO);
+	// Element Buffer Object
+	glGenBuffers(1, &EBO);
+
 
 	// Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).
 	glBindVertexArray(VAO);
@@ -233,6 +241,10 @@ int main() {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	// Copy the previously defined vertex data into the buffer's memory
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	// Bind the Element Array Object
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 	// Position attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
@@ -243,7 +255,9 @@ int main() {
 	// TexCoord attribute
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(2);
-	glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
+	/** CHECK THIS!!**/
+	//glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
+	/*******/
 	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
 
 	// Then, we set the light's VAO (VBO stays the same. After all, the vertices are the same for the light object (also a 3D cube))
@@ -414,7 +428,10 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, textureWall);
 		glUniform1i(glGetUniformLocation(ourShader.Program, "material.difuse"), 2);
 		// Drawing the wall
-		glDrawArrays(GL_TRIANGLES, 42, 24);
+		glDrawArrays(GL_TRIANGLES, 42, 18);
+		// Drawing the back wall
+		glBindVertexArray(VAO);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		/*
 		// Bind Textures using texture units FOR SKY
 		glActiveTexture(GL_TEXTURE3);
