@@ -137,37 +137,27 @@ int main() {
 		-0.5f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
 		10.0f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, 10.0f,	0.0f, 1.0f, 0.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, 10.0f,	0.0f, 1.0f, 0.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, 10.0f,	0.0f, 1.0f, 0.0f,	0.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
 		// Left Wall
 		-0.5f, 5.0f, 10.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		-0.5f, 5.0f, -0.5f,		1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
 		-0.5f, -0.5f, -0.5f,	1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,	1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, 10.0f,	1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, 10.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		// Front Wall
 		-0.5f, 5.0f, -0.5f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
 		10.0f, 5.0f, -0.5f,		0.0f, 0.0f, 1.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, -0.5f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
 		// Right Wall
 		10.0f, 5.0f, -0.5f,		-1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		10.0f, 5.0f, 10.0f,		-1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, 10.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, 10.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
 		10.0f, -0.5f, -0.5f,	-1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-		10.0f, 5.0f, -0.5f,		-1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		// Back Wall
 		-0.5f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
 		10.0f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
-		-0.5f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
+		-0.5f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	0.0f, 0.0f/*,
 
 		// Lamp
 		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
@@ -210,21 +200,42 @@ int main() {
 		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
 		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
 		-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
-		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f
+		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f*/
 		// Sky
 		/*-150.0f, 20.0f, -150.0f,	0.0f, -1.0f, 0.0f,	0.0f, 1.0f,
 		150.0f, 20.0f, -150.0f,	0.0f, -1.0f, 0.0f,	1.0f, 1.0f,
 		150.0f, 20.0f, 150.0f,	0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
 		150.0f, 20.0f, 150.0f,	0.0f, -1.0f, 0.0f,	1.0f, 0.0f,
 		-150.0f, 20.0f, 150.0f,	0.0f, -1.0f, 0.0f,	0.0f, 0.0f,
-		-150.0f, 20.0f, -150.0f,	0.0f, -1.0f, 0.0f,	0.0f, 1.0f*/
+		-150.0f, 20.0f, -150.0f, 0.0f, -1.0f, 0.0f,	0.0f, 1.0f*/
 		
 	};
 
-	GLuint VBO, VAO;
+	GLuint indices[] = {  
+		// Floor
+		37, 38, 36,
+		38, 39, 36,
+		// Left Wall
+		41, 42, 40,
+		42, 43, 40,
+		// Front wall
+		45, 46, 44,
+		46, 47, 44,
+		// Right Wall
+		49, 50, 48,
+		50, 51, 48,
+		// Back Wall
+		53, 54, 52,   
+		54, 55, 52    
+	};
+
+	GLuint VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
 	// Generate a Buffer
 	glGenBuffers(1, &VBO);
+	// Element Buffer Object
+	glGenBuffers(1, &EBO);
+
 
 	// Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).
 	glBindVertexArray(VAO);
@@ -233,6 +244,10 @@ int main() {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	// Copy the previously defined vertex data into the buffer's memory
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	// Bind the Element Array Object
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 	// Position attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
@@ -243,11 +258,13 @@ int main() {
 	// TexCoord attribute
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(2);
-	glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
+	/** CHECK THIS!!**/
+	//glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
+	/*******/
 	glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
 
 	// Then, we set the light's VAO (VBO stays the same. After all, the vertices are the same for the light object (also a 3D cube))
-	GLuint lightVAO;
+	/*GLuint lightVAO;
 	glGenVertexArrays(1, &lightVAO);
 	glBindVertexArray(lightVAO);
 	// We only need to bind to the VBO (to link it with glVertexAttribPointer), no need to fill it; the VBO's data already contains all we need.
@@ -255,7 +272,7 @@ int main() {
 	// Set the vertex attributes (only position data for the lamp))
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0); // Note that we skip over the other data in our buffer object (we don't need the normals/textures, only positions).
 	glEnableVertexAttribArray(0);
-	glBindVertexArray(0);
+	glBindVertexArray(0);*/
 
 
 	// Load and create a texture 
@@ -408,13 +425,20 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, textureFloor);
 		glUniform1i(glGetUniformLocation(ourShader.Program, "material.difuse"), 1);
 		// Drawing the floor
-		glDrawArrays(GL_TRIANGLES, 36, 6);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		//glDrawArrays(GL_TRIANGLES, 36, 6);
+		
 		// Bind Textures using texture units FOR WALLS
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, textureWall);
 		glUniform1i(glGetUniformLocation(ourShader.Program, "material.difuse"), 2);
 		// Drawing the wall
-		glDrawArrays(GL_TRIANGLES, 42, 24);
+		
+		//glDrawArrays(GL_TRIANGLES, 42, 18);
+		
+		// Drawing the back wall
+		glBindVertexArray(VAO);
+		glDrawElements(GL_TRIANGLES, 24, GL_UNSIGNED_INT, (void*)(6*(sizeof(unsigned int))));
 		/*
 		// Bind Textures using texture units FOR SKY
 		glActiveTexture(GL_TEXTURE3);
@@ -429,7 +453,7 @@ int main() {
 		// Drawing the lamp
 		// ====================
 		// Also draw the lamp object, again binding the appropriate shader
-		lampShader.Use();
+		/*lampShader.Use();
 		// Get location objects for the matrices on the lamp shader (these could be different on a different shader)
 		modelLoc = glGetUniformLocation(lampShader.Program, "model");
 		viewLoc = glGetUniformLocation(lampShader.Program, "view");
@@ -450,7 +474,7 @@ int main() {
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(lightVAO);
 		glDrawArrays(GL_TRIANGLES, 66, 36);
-		glBindVertexArray(0);
+		glBindVertexArray(0);*/
 
 
 
