@@ -82,37 +82,45 @@ public:
 	void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime) {
 		GLfloat velocity = this->MovementSpeed * deltaTime;
 		if (direction == FORWARD) {
-			if (((this->Position + (this->Front * velocity)).x > 0.0f) &&
+			/*if (((this->Position + (this->Front * velocity)).x > 0.0f) &&
 				((this->Position + (this->Front * velocity)).x < 9.5f) &&
 				((this->Position + (this->Front * velocity)).z > 0.0f) &&
 				((this->Position - (this->Front * velocity)).z < 9.5f)) {
 				this->Position += this->Front * velocity;
-			}
+			}*/
+
+			this->Position += this->Front * velocity;
 			this->Position.y = 0.0f;
 		}
 		if (direction == BACKWARD) {
-			if (((this->Position - (this->Front * velocity)).x > 0.0f) && 
+			/*if (((this->Position - (this->Front * velocity)).x > 0.0f) && 
 				((this->Position - (this->Front * velocity)).x < 9.5f) &&
 				((this->Position - (this->Front * velocity)).z > 0.0f) &&
 				((this->Position - (this->Front * velocity)).z < 9.5f)) {
 				this->Position -= this->Front * velocity;
 			}
+			*/
+			this->Position -= this->Front * velocity;
 			this->Position.y = 0.0f;
 		}
 		if (direction == LEFT) {
+			/*
 			if (((this->Position - (this->Right * velocity)).x > 0.0f) &&
 				((this->Position - (this->Right * velocity)).x < 9.5f) &&
 				((this->Position - (this->Right * velocity)).z > 0.0f) &&
 				((this->Position - (this->Right * velocity)).z < 9.5f))
-				this->Position -= this->Right * velocity;
-			
+				this->Position -= this->Right * velocity;*/
+		this->Position -= this->Right * velocity;	
 		}
 		if (direction == RIGHT) {
+			/*
 			if (((this->Position + (this->Right * velocity)).x > 0.0f) &&
 				((this->Position + (this->Right * velocity)).x < 9.5f) &&
 				((this->Position + (this->Right * velocity)).z > 0.0f) &&
 				((this->Position + (this->Right * velocity)).z < 9.5f))
 				this->Position += this->Right * velocity;
+				*/
+			this->Position += this->Right * velocity;
 		}
 	}
 
