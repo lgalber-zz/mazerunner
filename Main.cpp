@@ -137,37 +137,27 @@ int main() {
 		-0.5f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
 		10.0f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, 10.0f,	0.0f, 1.0f, 0.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, 10.0f,	0.0f, 1.0f, 0.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, 10.0f,	0.0f, 1.0f, 0.0f,	0.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	0.0f, 1.0f,
 		// Left Wall
 		-0.5f, 5.0f, 10.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		-0.5f, 5.0f, -0.5f,		1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
 		-0.5f, -0.5f, -0.5f,	1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		-0.5f, -0.5f, -0.5f,	1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, 10.0f,	1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, 10.0f,		1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		// Front Wall
 		-0.5f, 5.0f, -0.5f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
 		10.0f, 5.0f, -0.5f,		0.0f, 0.0f, 1.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f,	1.0f, 0.0f,
 		-0.5f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, -0.5f,		0.0f, 0.0f, 1.0f,	0.0f, 1.0f,
 		// Right Wall
 		10.0f, 5.0f, -0.5f,		-1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		10.0f, 5.0f, 10.0f,		-1.0f, 0.0f, 0.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, 10.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, 10.0f,	-1.0f, 0.0f, 0.0f,	1.0f, 0.0f,
 		10.0f, -0.5f, -0.5f,	-1.0f, 0.0f, 0.0f,	0.0f, 0.0f,
-		10.0f, 5.0f, -0.5f,		-1.0f, 0.0f, 0.0f,	0.0f, 1.0f,
 		// Back Wall
 		-0.5f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	0.0f, 1.0f,
 		10.0f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	1.0f, 1.0f,
 		10.0f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
-		10.0f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	1.0f, 0.0f,
-		-0.5f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	0.0f, 0.0f,
-		-0.5f, 5.0f, 10.0f,		0.0f, 0.0f, -1.0f,	0.0f, 1.0f/*,
+		-0.5f, -0.5f, 10.0f,	0.0f, 0.0f, -1.0f,	0.0f, 0.0f/*,
 
 		// Lamp
 		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
@@ -221,9 +211,22 @@ int main() {
 		
 	};
 
-	GLuint indices[] = {  // Note that we start from 0!
-		61, 62, 65,   // First Triangle
-		62, 64, 65    // Second Triangle
+	GLuint indices[] = {  
+		// Floor
+		37, 38, 36,
+		38, 39, 36,
+		// Left Wall
+		41, 42, 40,
+		42, 43, 40,
+		// Front wall
+		45, 46, 44,
+		46, 47, 44,
+		// Right Wall
+		49, 50, 48,
+		50, 51, 48,
+		// Back Wall
+		53, 54, 52,   
+		54, 55, 52    
 	};
 
 	GLuint VBO, VAO, EBO;
@@ -422,16 +425,20 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, textureFloor);
 		glUniform1i(glGetUniformLocation(ourShader.Program, "material.difuse"), 1);
 		// Drawing the floor
-		glDrawArrays(GL_TRIANGLES, 36, 6);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		//glDrawArrays(GL_TRIANGLES, 36, 6);
+		
 		// Bind Textures using texture units FOR WALLS
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, textureWall);
 		glUniform1i(glGetUniformLocation(ourShader.Program, "material.difuse"), 2);
 		// Drawing the wall
-		glDrawArrays(GL_TRIANGLES, 42, 18);
+		
+		//glDrawArrays(GL_TRIANGLES, 42, 18);
+		
 		// Drawing the back wall
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 24, GL_UNSIGNED_INT, (void*)(6*(sizeof(unsigned int))));
 		/*
 		// Bind Textures using texture units FOR SKY
 		glActiveTexture(GL_TEXTURE3);
