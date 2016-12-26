@@ -22,7 +22,7 @@
 #include <SOIL.h>
 
 // Properties
-GLuint screenWidth = 800, screenHeight = 600;
+GLuint screenWidth = 1600, screenHeight = 900;
 
 // Function prototypes
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -33,6 +33,8 @@ void doMovement();
 // Camera
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 bool keys[1024];
+// Light attributes
+glm::vec3 lightPos(5.0f, 1.0f, 5.0f);
 GLfloat lastX = 400, lastY = 300;
 bool firstMouse = true;
 
@@ -40,8 +42,7 @@ GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
 
 // The MAIN function, from here we start our application and run our Game loop
-int main()
-{
+int main() {
 	// Init GLFW
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -74,14 +75,13 @@ int main()
 	Shader shader("model_loading.vs", "model_loading.frag");
 
 	// Load models
-	Model ourModel("test.obj");
+	Model ourModel("nanosuit/nanosuit.obj");
 
 	// Draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	// Game loop
-	while (!glfwWindowShouldClose(window))
-	{
+	while (!glfwWindowShouldClose(window)) {
 		// Set frame time
 		GLfloat currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
@@ -96,6 +96,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		shader.Use();   // <-- Don't forget this one!
+
 		// Transformation matrices
 		glm::mat4 projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
 		glm::mat4 view = camera.GetViewMatrix();

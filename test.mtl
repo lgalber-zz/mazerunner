@@ -1,12 +1,44 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
-# File Created: 26.12.2016 18:59:00
+# File Created: 27.12.2016 00:21:29
 
-newmtl wire_153228184
-	Ns 32
-	d 1
-	Tr 0
-	Tf 1 1 1
+newmtl 07___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
 	illum 2
-	Ka 0.6000 0.8941 0.7216
-	Kd 0.6000 0.8941 0.7216
-	Ks 0.3500 0.3500 0.3500
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Masonry.Stone.Ashlar.Random.Broken Coursed.png
+	map_Kd Masonry.Stone.Ashlar.Random.Broken Coursed.png
+
+newmtl 08___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Masonry.Stone.Ashlar.Random.Broken Coursed.png
+	map_Kd Masonry.Stone.Ashlar.Random.Broken Coursed.png
+
+newmtl 03___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka sitework.paving & surfacing.cobble stone.heringbone.jpg
+	map_Kd sitework.paving & surfacing.cobble stone.heringbone.jpg

@@ -37,8 +37,7 @@ public:
 
 	/*  Functions  */
 	// Constructor
-	Mesh(vector<Vertex> vertices, vector<GLuint> indices, vector<Texture> textures)
-	{
+	Mesh(vector<Vertex> vertices, vector<GLuint> indices, vector<Texture> textures) {
 		this->vertices = vertices;
 		this->indices = indices;
 		this->textures = textures;
@@ -48,13 +47,11 @@ public:
 	}
 
 	// Render the mesh
-	void Draw(Shader shader)
-	{
+	void Draw(Shader shader) {
 		// Bind appropriate textures
 		GLuint diffuseNr = 1;
 		GLuint specularNr = 1;
-		for (GLuint i = 0; i < this->textures.size(); i++)
-		{
+		for (GLuint i = 0; i < this->textures.size(); i++) {
 			glActiveTexture(GL_TEXTURE0 + i); // Active proper texture unit before binding
 			// Retrieve texture number (the N in diffuse_textureN)
 			stringstream ss;
@@ -80,8 +77,7 @@ public:
 		glBindVertexArray(0);
 
 		// Always good practice to set everything back to defaults once configured.
-		for (GLuint i = 0; i < this->textures.size(); i++)
-		{
+		for (GLuint i = 0; i < this->textures.size(); i++) {
 			glActiveTexture(GL_TEXTURE0 + i);
 			glBindTexture(GL_TEXTURE_2D, 0);
 		}
@@ -93,8 +89,7 @@ private:
 
 	/*  Functions    */
 	// Initializes all the buffer objects/arrays
-	void setupMesh()
-	{
+	void setupMesh() {
 		// Create buffers/arrays
 		glGenVertexArrays(1, &this->VAO);
 		glGenBuffers(1, &this->VBO);
