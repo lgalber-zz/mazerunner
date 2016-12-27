@@ -171,7 +171,8 @@ private:
 GLint TextureFromFile(const char* path, string directory) {
 	//Generate texture ID and load texture data 
 	string filename = string(path);
-	filename = directory + '/' + filename;
+	//filename = directory + '/' + filename;
+	//std::cout << filename << std::endl;
 	GLuint textureID;
 	glGenTextures(1, &textureID);
 	int width, height;
