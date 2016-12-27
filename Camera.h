@@ -122,6 +122,7 @@ public:
 				*/
 			this->Position += this->Right * velocity;
 		}
+		std::cout << this->Position.x << " " << this->Position.y << " " << this->Position.z << std::endl;
 	}
 
 	// Processes input received from a mouse input system. 
