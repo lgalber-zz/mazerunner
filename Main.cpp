@@ -75,7 +75,7 @@ int main() {
 	Shader shader("model_loading.vs", "model_loading.frag");
 
 	// Load models
-	Model ourModel("map.obj");
+	Model ourModel("cvmap.obj");
 
 	// Draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
