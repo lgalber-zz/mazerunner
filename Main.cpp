@@ -34,7 +34,7 @@ void doMovement();
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 bool keys[1024];
 // Light attributes
-glm::vec3 lightPos(5.0f, 1.0f, 5.0f);
+glm::vec3 lightPos(1.0f, 1.0f, 1.0f);
 GLfloat lastX = 400, lastY = 300;
 bool firstMouse = true;
 
@@ -75,7 +75,7 @@ int main() {
 	Shader shader("model_loading.vs", "model_loading.frag");
 
 	// Load models
-	Model ourModel("nanosuit/nanosuit.obj");
+	Model ourModel("cvmap.obj");
 
 	// Draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -96,6 +96,12 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		shader.Use();   // <-- Don't forget this one!
+
+		// Simple Lighting
+		GLint lightColorLoc = glGetUniformLocation(shader.Program, "lightColor");
+		glUniform3f(lightColorLoc, 1.0f, 1.0f, 1.0f);
+		GLint lightPosLoc = glGetUniformLocation(shader.Program, "lightPos");
+		glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
 
 		// Transformation matrices
 		glm::mat4 projection = glm::perspective(camera.Zoom, (float)screenWidth / (float)screenHeight, 0.1f, 100.0f);
