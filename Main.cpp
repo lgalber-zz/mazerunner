@@ -34,7 +34,7 @@ void doMovement();
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 bool keys[1024];
 // Light attributes
-glm::vec3 lightPos(1.0f, 1.0f, 1.0f);
+glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 GLfloat lastX = 400, lastY = 300;
 bool firstMouse = true;
 
@@ -75,7 +75,7 @@ int main() {
 	Shader shader("model_loading.vs", "model_loading.frag");
 
 	// Load models
-	Model ourModel("cvmap.obj");
+	Model ourModel("plane.obj");
 
 	// Draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
