@@ -22,7 +22,7 @@
 #include <SOIL.h>
 
 // Properties
-GLuint screenWidth = 800, screenHeight = 600;
+GLuint screenWidth = 1600, screenHeight = 900;
 
 // Function prototypes
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
