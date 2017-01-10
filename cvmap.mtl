@@ -1,7 +1,7 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
-# File Created: 27.12.2016 16:10:42
+# File Created: 03.01.2017 11:09:57
 
-newmtl 14___Default
+newmtl 17___Default
 	Ns 10.0000
 	Ni 1.5000
 	d 1.0000
@@ -12,10 +12,10 @@ newmtl 14___Default
 	Kd 0.5882 0.5882 0.5882
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka plano.bmp
-	map_Kd plano.bmp
+	map_Ka grass.bmp
+	map_Kd grass.bmp
 
-newmtl 21___Default
+newmtl 13___Default
 	Ns 10.0000
 	Ni 1.5000
 	d 1.0000
@@ -26,50 +26,8 @@ newmtl 21___Default
 	Kd 0.5882 0.5882 0.5882
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka wall4.bmp
-	map_Kd wall4.bmp
-
-newmtl 19___Default
-	Ns 10.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.5882 0.5882 0.5882
-	Kd 0.5882 0.5882 0.5882
-	Ks 0.0000 0.0000 0.0000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka wall2.bmp
-	map_Kd wall2.bmp
-
-newmtl 15___Default
-	Ns 10.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.5882 0.5882 0.5882
-	Kd 0.5882 0.5882 0.5882
-	Ks 0.0000 0.0000 0.0000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka tube.bmp
-	map_Kd tube.bmp
-
-newmtl 10___Default
-	Ns 10.0000
-	Ni 1.5000
-	d 1.0000
-	Tr 0.0000
-	Tf 1.0000 1.0000 1.0000 
-	illum 2
-	Ka 0.5882 0.5882 0.5882
-	Kd 0.5882 0.5882 0.5882
-	Ks 0.0000 0.0000 0.0000
-	Ke 0.0000 0.0000 0.0000
-	map_Ka wall5.bmp
-	map_Kd wall5.bmp
+	map_Ka wall.bmp
+	map_Kd wall.bmp
 
 newmtl 20___Default
 	Ns 10.0000
@@ -85,7 +43,7 @@ newmtl 20___Default
 	map_Ka wall3.bmp
 	map_Kd wall3.bmp
 
-newmtl 13___Default
+newmtl 10___Default
 	Ns 10.0000
 	Ni 1.5000
 	d 1.0000
@@ -96,5 +54,47 @@ newmtl 13___Default
 	Kd 0.5882 0.5882 0.5882
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka wall.bmp
-	map_Kd wall.bmp
+	map_Ka wall5.bmp
+	map_Kd wall5.bmp
+
+newmtl 19___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka wall2.bmp
+	map_Kd wall2.bmp
+
+newmtl 21___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka wall4.bmp
+	map_Kd wall4.bmp
+
+newmtl 15___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka tube.bmp
+	map_Kd tube.bmp
